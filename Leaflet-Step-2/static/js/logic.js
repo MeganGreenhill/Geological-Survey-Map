@@ -63,6 +63,13 @@ function createFeatures(earthquakeData) {
     },
   });
 
+  // Import data for tectonic plate layer - I tried to make this work, but unfortunately it just 
+  // wouldn't function as the console kept producing an error that 'tectonicPlates' was not
+  // a valid geoJSON object. I have still included all other parts of the bonus assignment section.
+  // var tectonicPlatesLink = "static/data/PB2002_plates.json";
+  // var tectonicPlatesData = d3.json(tectonicPlatesLink);
+  // var tectonicPlates = L.geoJson(tectonicPlatesData);
+
   // Sending out earthquakes layer to the createMap function
   createMap(earthquakes)
 };
@@ -112,7 +119,7 @@ function createMap(earthquakes) {
     collapsed: false
   }).addTo(myMap);
 
-  // Create a legend that will provide context for the map data. ISSUE IS HERE
+  // Create a legend that will provide context for the map data.
   var legend = L.control({position: 'bottomright'});
 
   function getColor(category) {
